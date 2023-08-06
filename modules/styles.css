@@ -1,0 +1,214 @@
+/* https://colorhunt.co/palette/252525ff0000af0404414141 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #252525;
+  width: 100%;
+
+}
+
+/* nav menu start --------------------------------------------------------------------------------------->*/
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  margin-top: -1.7rem;
+  z-index: 2;
+}
+
+.input {
+
+  position: fixed;
+  margin-top: 0px;
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  height: 3rem;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.value {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  color: white;
+  display: flex;
+  position: relative;
+  gap: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.value:not(:active):hover,
+.value:focus {
+  background-color: #AF0404;
+}
+
+.value:focus,
+.value:active {
+  background-color: #AF0404;
+  outline: none;
+}
+
+.value::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -10px;
+  width: 5px;
+  height: 80%;
+  background-color: #ff0000;
+  border-radius: 5px;
+  opacity: 0;
+}
+
+.value:focus::before,
+.value:active::before {
+  opacity: 1;
+}
+
+.value svg {
+  width: 25px;
+  height: 25px;
+}
+
+
+/* Page-1 start section 1 ------------------------------------------------------------------>*/
+.home-content-section{
+  margin-top: 3.2rem;
+  border: solid 5px red;
+  width: 99%;
+  height: 100vh;
+}
+
+
+
+
+/* Page-1 start section 1 ------------------------------------------------------------------>*/
+.page-1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 3.2rem;
+  border: solid 5px red;
+  width: 99%;
+  height: 100vh;
+}
+.card-title {
+  color: #181818;
+  font-size: 1.5em;
+  line-height: normal;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+.small-desc {
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.5em;
+  color: #362222;
+}
+
+.small-desc {
+  font-size: 1em;
+}
+
+.go-corner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  background: linear-gradient(135deg, #8a3c3c, #8d0303);
+  border-radius: 0 4px 0 32px;
+}
+
+.go-arrow {
+  margin-top: -4px;
+  margin-right: -4px;
+  color: rgb(37, 33, 33);
+  font-family: courier, sans;
+}
+
+.card {
+  display: block;
+  position: relative;
+  max-width: 300px;
+  max-height: 320px;
+  background-color: #f2f8f9;
+  border-radius: 10px;
+  padding: 2em 1.2em;
+  margin: 12px;
+  text-decoration: none;
+  z-index: 0;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #af0404, #faa0a0);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -16px;
+  right: -16px;
+  background: linear-gradient(135deg, #790202, #af0404);
+  height: 32px;
+  width: 32px;
+  border-radius: 32px;
+  transform: scale(1);
+  transform-origin: 50% 50%;
+  transition: transform 0.35s ease-out;
+}
+
+.card:hover:before {
+  transform: scale(28);
+}
+
+.card:hover .small-desc {
+  transition: all 0.5s ease-out;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.card:hover .card-title {
+  transition: all 0.5s ease-out;
+  color: #ffffff;
+}
+/* followers section ------------------------------------------------------------------>*/
+
+.btn-followers {
+  font-family: Roboto, Helvetica, sans-serif;
+  font-size: 1rem;
+  align-items: center;
+  height: 48px;
+  border-radius: 0.4rem;
+  font-weight: 600;
+  margin: 12px;
+  padding: 0 1.2rem;
+  color: #ddd;
+  border: none;
+  box-shadow: 0 0.5rem 1rem rgba(143, 142, 142, 0.15) !important;
+  background: #af0404;
+}
+
+.followers {
+  font-size: 0.8rem;
+  color: #ddd;
+}
+
+.btn-followers:hover {
+  background: #ff0000;
+}
