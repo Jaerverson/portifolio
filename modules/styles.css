@@ -6,9 +6,9 @@
 }
 
 body {
+  font-family: Arial, Helvetica, sans-serif;
   background-color: #252525;
   width: 100%;
-
 }
 
 /* nav menu start --------------------------------------------------------------------------------------->*/
@@ -22,24 +22,172 @@ nav {
   margin-top: -1.7rem;
   z-index: 2;
 }
-
-.input {
-
+/* ________________________________________________________________________________________________________ */
+.header-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
   position: fixed;
-  margin-top: 0px;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+.header-menu .logo {
+  font-size: 23px;
+  font-weight: bold;
+  color: #fff;
+}
+.header-menu .menu {
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.burger {
+  position: relative;
+  width: 40px;
+  height: 30px;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+}
+
+.burger input {
+  display: none;
+}
+
+.burger span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: #ff0000;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+
+.burger span:nth-of-type(1) {
+  top: 0px;
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(3) {
+  top: 100%;
+  transform-origin: left center;
+  transform: translateY(-100%);
+}
+
+.burger input:checked ~ span:nth-of-type(1) {
+  transform: rotate(45deg);
+  top: 0px;
+  left: 5px;
+}
+
+.burger input:checked ~ span:nth-of-type(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.burger input:checked ~ span:nth-of-type(3) {
+  transform: rotate(-45deg);
+  top: 28px;
+  left: 5px;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+.container .leftside {
+  flex: 1;
+  background-color: #af0404;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+.container .rightside {
+  flex: 1;
+  background-image: url("../assets/DSC_0131.jpg");
+  background-size: cover;
+  background-position: center top;
+}
+
+.container .info {
+  color: #fff;
+}
+.container .info .profession {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 19px;
+}
+.container .info .name {
+  font-weight: bold;
+  font-size: 80px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.container .info .buttons a {
+  display: inline-block;
+  background-color: #fff;
+  color: #252525;
+  padding: 20px 40px;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  box-shadow: 0px 0px 10px #111;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.container .info .buttons a.light {
+  color: #fff;
+  background-color: #252525;
+}
+.container .info .buttons a:hover {
+  opacity: 0.8;
+}
+
+/* ________________________________________________________________________________________________________ */
+
+@media (max-width: 450px) {
+  .container .leftside .info .name {
+    font-size: 50px;
+  }
+
+  .container .leftside .info .buttons a {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+/* ________________________________________________________________________________________________________ */
+.input {
+  position: fixed;
+  margin-top: 10px;
   display: flex;
   gap: 2rem;
   width: 100%;
-  height: 3rem;
+  height: 3.7rem;
   background-color: black;
   justify-content: center;
   align-items: center;
-  
 }
 
 .value {
   background-color: transparent;
   border: none;
+  align-items: center;
   padding: 10px;
   color: white;
   display: flex;
@@ -51,12 +199,12 @@ nav {
 
 .value:not(:active):hover,
 .value:focus {
-  background-color: #AF0404;
+  background-color: #af0404;
 }
 
 .value:focus,
 .value:active {
-  background-color: #AF0404;
+  background-color: #af0404;
   outline: none;
 }
 
@@ -82,25 +230,67 @@ nav {
   height: 25px;
 }
 
-
 /* Page-1 start section 1 ------------------------------------------------------------------>*/
-.home-content-section{
-  margin-top: 3.2rem;
-  border: solid 5px red;
-  width: 99%;
+.home-content-section {
+  margin-top: 3rem;
+  width: 100%;
   height: 100vh;
 }
 
+/* tecnology section 1 ------------------------------------------------------------------>*/
+.page-2 {
+  background-color: #252525;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1.25rem;
+  height: 100vh;
+  color: white;
+}
 
+.matrix {
+  display: grid;
+  padding-top: 30px;
 
+  align-items: center;
+  grid-template-columns: 1fr repeat(2, 450px);
+  grid-template-rows: repeat(2, 220px);
+  gap: 1.5px;
+  margin-left: 10%;
+}
 
+.cell {
+  border: 3.5px solid white;
+  background-color: #252525;
+  width: 450px;
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.left-side-tec {
+
+  margin-top: 13.9rem;
+  margin-left: 3px;
+  width: 250px;
+  height: 446px;
+  border: 3.5px solid red;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.left-side-tec img , p {
+  margin: 5px;
+  width: 100px;
+}
 /* Page-1 start section 1 ------------------------------------------------------------------>*/
 .page-1 {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin-top: 3.2rem;
-  border: solid 5px red;
-  width: 99%;
+  width: 100%;
+  padding: 1.25rem;
   height: 100vh;
 }
 .card-title {
@@ -188,7 +378,7 @@ nav {
   color: #ffffff;
 }
 /* followers section ------------------------------------------------------------------>*/
-
+/* 
 .btn-followers {
   font-family: Roboto, Helvetica, sans-serif;
   font-size: 1rem;
@@ -211,4 +401,4 @@ nav {
 
 .btn-followers:hover {
   background: #ff0000;
-}
+} */
