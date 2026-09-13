@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,10 +8,11 @@
   </head>
 
   <body>
-    <nav class="menu">
+    <header>
+      <nav class="menu" aria-label="Navegação principal">
       <div class="input">
         <div class="header-menu">
-          <div class="logo">Jaerverson__.</div>
+          <h1 class="logo">Jaerverson__.</h1>
           <div class="menu">
             <label class="burger" for="burger">
               <input type="checkbox" id="burger" />
@@ -21,7 +22,8 @@
             </label>
           </div>
         </div>
-        <button class="value">
+        <ul class="nav-list">
+          <li><a class="value" href="#home">
           <svg
             width="15px"
             height="15px"
@@ -62,8 +64,8 @@
             />
           </svg>
           Home
-        </button>
-        <button class="value">
+        </a></li>
+        <li><a class="value" href="#tecnologias">
           <svg
             width="15px"
             height="15px"
@@ -94,8 +96,8 @@
             />
           </svg>
           Tecnologias
-        </button>
-        <button class="value">
+        </a></li>
+        <li><a class="value" href="#experiencia">
           <svg
             width="15px"
             height="15px"
@@ -114,8 +116,8 @@
             />
           </svg>
           Experiência
-        </button>
-        <button class="value">
+        </a></li>
+        <li><a class="value" href="#projetos">
           <svg
             width="15px"
             height="15px"
@@ -135,8 +137,8 @@
             />
           </svg>
           Projetos
-        </button>
-        <button class="value">
+        </a></li>
+        <li><a class="value" href="#contato">
           <svg
             width="15px"
             height="15px"
@@ -159,23 +161,28 @@
             />
           </svg>
           Contato
-        </button>
+        </a></li>
+        </ul>
       </div>
-    </nav>
+      </nav>
+    </header>
 
-    <section class="home-content-section">
+    <main>
+    <section id="home" class="home-content-section" aria-labelledby="intro-title">
       <section class="container">
         <div class="leftside">
           <div class="info">
-            <div class="profession">Web Developer</div>
-            <div class="name">I'm Jaerverson Melo</div>
+            <p class="profession"><strong>Web Developer</strong></p>
+            <h2 id="intro-title" class="name">I'm <em>Jaerverson Melo</em></h2>
             <div class="buttons">
               <a href="">More About Me</a>
               <a href="" class="light">Hire Me</a>
             </div>
           </div>
         </div>
-        <div class="rightside"></div>
+        <div class="rightside">
+          <img src="./assets/profile-pic.png" alt="Foto de perfil de Jaérverson Melo" />
+        </div>
       </section>
     </section>
 
@@ -256,22 +263,89 @@
         </div>
       </div>
     </section>
-    <section class="page-1">
-      <div><h1>Experiência_.</h1></div>
-    </section>
-    <section class="page-1">
-      <div><h1>Projetos_.</h1></div>
-    </section>
-    <section class="page-1">
+    <section id="experiencia" class="page-1" aria-labelledby="experiencia-title">
       <div>
-        <h1>Contato_.</h1>
-        <img
-          src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://br.linkedin.com/in/#"
-          alt="In"
-        />
+        <h2 id="experiencia-title">Experiência_.</h2>
+        <p>Desenvolvimento web com foco em interfaces acessíveis, responsivas e funcionais.</p>
+        <table>
+          <caption>Competências e disponibilidade semanal</caption>
+          <thead>
+            <tr>
+              <th scope="col">Competência</th>
+              <th scope="col">Nível</th>
+              <th scope="col">Disponibilidade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">HTML e CSS</th>
+              <td>Avançado</td>
+              <td rowspan="2">Segunda a sexta</td>
+            </tr>
+            <tr>
+              <th scope="row">JavaScript</th>
+              <td>Intermediário</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th scope="row" colspan="2">Carga horária</th>
+              <td>20 horas semanais</td>
+            </tr>
+          </tfoot>
+        </table>
       </div>
     </section>
-
-    <script src="scripts.js"></script>
+    <section id="projetos" class="page-1" aria-labelledby="projetos-title">
+      <div>
+        <h2 id="projetos-title">Projetos_.</h2>
+        <article class="card">
+          <h3 class="card-title">Portfólio pessoal</h3>
+          <p class="small-desc">Projeto desenvolvido com HTML, CSS e JavaScript, priorizando acessibilidade e semântica.</p>
+        </article>
+      </div>
+    </section>
+    <section id="contato" class="page-1" aria-labelledby="contato-title">
+      <div>
+        <h2 id="contato-title">Contato_.</h2>
+        <form action="#contato" method="post">
+          <fieldset>
+            <legend>Envie uma mensagem</legend>
+            <p>
+              <label for="nome">Nome</label>
+              <input id="nome" name="nome" type="text" required minlength="3" maxlength="80" />
+            </p>
+            <p>
+              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" required maxlength="120" />
+            </p>
+            <p>
+              <label for="motivo">Motivo do contato</label>
+              <select id="motivo" name="motivo" required>
+                <option value="">Selecione uma opção</option>
+                <option value="projeto">Novo projeto</option>
+                <option value="parceria">Parceria</option>
+                <option value="outro">Outro assunto</option>
+              </select>
+            </p>
+            <p>
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" required minlength="10" maxlength="1000"></textarea>
+            </p>
+            <button type="submit">Enviar mensagem</button>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+    </main>
+    <footer>
+      <p>&copy; 2026 Jaérverson Melo. Todos os direitos reservados.</p>
+      <p><a href="mailto:contato@jaerverson.dev">contato@jaerverson.dev</a></p>
+      <nav aria-label="Redes sociais">
+        <a href="https://github.com/Jaerverson" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/jaerverson/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </nav>
+    </footer>
+    <script src="src/scripts.js"></script>
   </body>
 </html>
